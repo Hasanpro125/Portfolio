@@ -46,3 +46,47 @@ const typed = new Typed('.multiple-text',{
     backDelay: 1000,
     loop: true
 });
+
+
+
+
+
+let telegram_bot_id = "5888454950:AAFE1qLd10cBw5-A-P1CVfnatH8GoZKNVKU";
+// https://api.telegram.org/bot6200957174:AAFI8PcmEbAkIiGbrcMp-a6_Ngci2muR8r8/getupdates
+let chat_id = 5477175368;
+let name, email, number, subject, message;
+let ready = function () {
+    name = document.getElementById("name").value;
+    email = document.getElementById("email").value;
+    number = document.getElementById("number").value;
+    subject = document.getElementById("subject").value;
+    message = document.getElementById("message").value;
+    message = "Name: " + name + "\nEmail: " + email + "\nMobile number: " + number + "\nSubject: " + subject + "\nMessage: " + message;
+};
+function port() {
+    event.preventDefault();
+    ready();
+    let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://api.telegram.org/bot" + telegram_bot_id + "/sendMessage",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json",
+            "cache-control": "no-cache"
+        },
+        "data": JSON.stringify({
+            "chat_id": chat_id,
+            "text": message
+        })
+    };
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("number").value = "";
+    document.getElementById("subject").value = "";
+    document.getElementById("message").value = "";
+    return false;
+};

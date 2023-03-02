@@ -322,68 +322,45 @@ span {
 
 
 
-.styled-input {
-    float: left;
-    width: 293px;
-    margin: 1rem 0;
-    position: relative;
-    border-radius: 4px;
+.contact h2 {
+    margin-bottom: 3rem;
 }
 
-@media only screen and (max-width: 768px) {
-    .styled-input {
-        width: 100%;
-    }
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
-.styled-input label {
-    color: #999;
-    padding: 1.3rem 30px 1rem 30px;
-    position: absolute;
-    top: 10px;
-    left: 0;
-    -webkit-transition: all 0.25s ease;
-    transition: all 0.25s ease;
-    pointer-events: none;
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.styled-input.wide {
-    width: 650px;
-    max-width: 100%;
-}
-
-input,
-textarea {
-    padding: 30px;
-    border: 0;
+.contact form .input-box input,
+.contact form textarea {
     width: 100%;
-    font-size: 1rem;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
     background: var(--secound-bg-color);
-    color: white;
-    border-radius: 4px;
+    border-radius: .8rem;
+    margin: .7rem 0;
 }
 
-input:focus,
-textarea:focus {
-    outline: 0;
+.contact form .input-box input {
+    width: 49%;
 }
 
-input:focus~span,
-textarea:focus~span {
-    width: 100%;
-    -webkit-transition: all 0.075s ease;
-    transition: all 0.075s ease;
+.contact form textarea {
+    resize: none;
 }
 
-textarea {
-    width: 100%;
-    min-height: 15em;
-}
-
-.input-container {
-    width: 650px;
-    max-width: 100%;
-    margin: 20px auto 25px auto;
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
 }
 
 .footer{
